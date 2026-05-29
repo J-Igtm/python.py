@@ -7,74 +7,97 @@ def home():
     return """
     <html>
     <head>
-        <title>Joginder Cloud App</title>
+        <title>Joginder Portfolio</title>
         <style>
-            body {
-                margin: 0;
+            body{
                 font-family: Arial, sans-serif;
-                background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-                color: white;
-                text-align: center;
+                background:#0f172a;
+                color:white;
+                text-align:center;
+                margin:0;
             }
-            .container {
-                padding-top: 120px;
+
+            .header{
+                padding:50px;
+                background:#1e293b;
             }
-            h1 {
-                font-size: 50px;
-                margin-bottom: 10px;
+
+            .section{
+                margin:30px;
+                padding:20px;
+                background:#334155;
+                border-radius:10px;
             }
-            p {
-                font-size: 20px;
-                margin-bottom: 30px;
+
+            h1{
+                color:#38bdf8;
             }
-            .btn {
-                background: #00c6ff;
-                color: white;
-                padding: 14px 30px;
-                text-decoration: none;
-                border-radius: 30px;
-                font-size: 18px;
-                display: inline-block;
+
+            ul{
+                list-style:none;
+                padding:0;
             }
-            .btn:hover {
-                background: #0072ff;
+
+            li{
+                padding:5px;
             }
-            .card {
-                background: rgba(255,255,255,0.15);
-                margin: 40px auto;
-                padding: 25px;
-                width: 70%;
-                border-radius: 15px;
+
+            .btn{
+                display:inline-block;
+                padding:12px 25px;
+                background:#38bdf8;
+                color:white;
+                text-decoration:none;
+                border-radius:25px;
             }
         </style>
     </head>
+
     <body>
-        <div class="container">
-            <h1>Welcome Joginder!</h1>
-            <p>My First Professional Cloud Website using Flask and Render.</p>
-            <a class="btn" href="/about">About Project</a>
 
-            <div class="card">
-                <h2>Cloud Computing Project</h2>
-                <p>This app is deployed on Render Cloud and connected with GitHub.</p>
-            </div>
+        <div class="header">
+            <h1>Joginder Kumar Sharma</h1>
+            <h3>Python Developer | Cloud Computing Learner</h3>
         </div>
-    </body>
-    </html>
-    """
 
-@app.route("/about")
-def about():
-    return """
-    <html>
-    <head>
-        <title>About Project</title>
-    </head>
-    <body style="font-family:Arial; text-align:center; padding-top:80px;">
-        <h1>About This Project</h1>
-        <p>This is my first cloud computing project.</p>
-        <p>Technology used: Python, Flask, GitHub, Render.</p>
-        <a href="/">Back to Home</a>
+        <div class="section">
+            <h2>About Me</h2>
+            <p>
+            I am learning Python, Flask, GitHub, Render Cloud,
+            Blockchain and Cyber Security.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>Git & GitHub</li>
+                <li>Cloud Computing</li>
+                <li>Cyber Security</li>
+                <li>Blockchain</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li>Cloud Portfolio Website</li>
+                <li>Password Manager</li>
+                <li>Network Scanner</li>
+                <li>Blockchain Certificate Verification</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>Email: joginderkumarsharma58@gmail.com</p>
+        </div>
+
+        <br>
+        <a class="btn" href="/">Home</a>
+
     </body>
     </html>
     """
