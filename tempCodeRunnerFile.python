@@ -1,0 +1,56 @@
+# Simple Machine Learning AI Chatbot
+# Install first:
+# pip install scikit-learn numpy
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+# Training data
+questions = [
+    "hello",
+    "hi",
+    "how are you",
+    "what is your name",
+    "bye",
+    "who made you",
+    "what is python",
+    "tell joke",
+]
+
+answers = [
+    "Hello!",
+    "Hi there!",
+    "I am fine.",
+    "I am an AI chatbot.",
+    "Goodbye!",
+    "Joginder created me.",
+    "Python is a programming language.",
+    "Why did the computer laugh? Because of a funny byte!"
+]
+
+# Convert text into numbers
+vectorizer = CountVectorizer()
+
+X = vectorizer.fit_transform(questions)
+
+# Train ML model
+model = MultinomialNB()
+model.fit(X, answers)
+
+print("🤖 ML AI Chatbot Started")
+print("Type 'exit' to stop\n")
+
+while True:
+    user = input("You: ")
+
+    if user.lower() == "exit":
+        print("Goodbye!")
+        break
+
+    # Convert user text
+    user_data = vectorizer.transform([user])
+
+    # Predict answer
+    prediction = model.predict(user_data)
+
+    print("AI:", prediction[0])

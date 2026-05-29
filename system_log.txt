@@ -1,0 +1,4 @@
+Login successful
+System running
+ERROR: Unauthorized access attempt
+Server connected
